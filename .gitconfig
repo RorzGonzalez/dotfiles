@@ -1,0 +1,14 @@
+[credential]
+	helper = osxkeychain
+[user]
+	name = Rory Gonzalez-Brown
+	email = 81010708+RorzGonzalez@users.noreply.github.com
+[init]
+	defaultBranch = main
+[core]
+	editor = codium
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
