@@ -1,16 +1,10 @@
 #!/bin/sh
 
-echo "Setting up your dotfile aliases..."
+echo "Setting up your dotfile symlinks..."
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-
-rm -rf $HOME/.aliases
-ln -s $HOME/.dotfiles/.aliases $HOME/.aliases
-
-rm -rf $HOME/.aliases.zsh
-ln -s $HOME/.dotfiles/.aliases.zsh $HOME/.aliases.zsh
 
 rm -rf $HOME/.bash_profile
 ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile

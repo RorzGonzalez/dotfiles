@@ -1,5 +1,5 @@
 # Load dotfiles binaries
-export PATH="$DOTFILES/bin:$PATH"
+# export PATH="$DOTFILES/bin:$PATH"
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
