@@ -47,3 +47,5 @@ ln -s $HOME/.dotfiles/.wp-cli $HOME/.wp-cli
 
 rm -rf $HOME/.mackup
 ln -s $HOME/.dotfiles/.mackup $HOME/.mackup
+
+ln -s $HOME/.dotfiles/Brewfile $HOME/Brewfile

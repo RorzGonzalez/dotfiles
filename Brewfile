@@ -3,7 +3,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
-tap 'nicoverbruggen/homebrew-cask'
+# tap 'nicoverbruggen/homebrew-cask'
 tap 'stripe/stripe-cli'
 
 # Binaries
@@ -34,7 +34,6 @@ brew 'gifsicle'
 
 # Development
 brew 'php'
-brew 'php@8.1'
 brew 'php@8.0'
 brew 'php@7.4'
 brew 'composer'
@@ -48,24 +47,49 @@ brew 'yarn'
 
 # Apps
 cask 'alfred'
+# cask 'audio-hijack'
 cask 'bitwarden'
-cask 'brave'
+cask 'brave-browser'
+# cask 'camtasia'
+cask 'chronosync'
+cask 'dropbox'
 cask 'discord'
+cask 'easyfind'
+cask 'etrecheckpro'
 cask 'firefox'
 cask 'flycut'
 cask 'forklift'
 cask 'github'
 cask 'google-chrome'
 # cask 'helo'
+cask 'handbrake'
+cask 'ilok-license-manager'
 cask 'imageoptim'
-cask 'istat'
+cask 'iterm2'
+cask 'istat-menus'
+cask 'lulu'
+cask 'max'
+cask 'omnidisksweeper'
+cask 'plex'
 # cask 'phpmon'
-cask 'sequel-pro'
+cask 'postman-agent'
+cask 'postman'
+cask 'sequel-ace'
+# cask 'sketch'
+cask 'skype'
 cask 'slack'
+cask 'spotify'
+cask 'subler'
+cask 'teamviewer'
 cask 'the-unarchiver'
 # cask 'tinkerwell'
+cask 'tor-browser'
+cask 'transmission'
+cask 'vlc'
 cask 'vscodium'
 cask 'whatsapp'
+cask 'wine-stable'
+cask 'zeplin'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -85,6 +109,6 @@ cask 'font-source-serif-pro'
 # Mac App Store
 mas 'Keynote', id: 409183694
 mas 'Numbers', id: 409203825
-mas 'Pages', id:
+# mas 'Pages', id:
 mas 'Speedtest', id: 1153157709
 mas 'Things', id: 904280696
