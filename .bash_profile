@@ -1,6 +1,7 @@
 . ~/.aliases
 source ~/.profile
 source ~/.stripe/stripe-completion.bash
+export PATH=$PATH:/Users/Saucz/ffmpeg
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"

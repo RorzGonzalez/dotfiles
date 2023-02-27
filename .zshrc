@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH=$PATH:/Users/Saucz/ffmpeg
+
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
