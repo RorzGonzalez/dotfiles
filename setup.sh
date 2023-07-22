@@ -36,8 +36,8 @@ ln -s $HOME/.dotfiles/.wget-hsts $HOME/.wget-hsts
 rm -rf $HOME/.yarnrc
 ln -s $HOME/.dotfiles/.yarnrc $HOME/.yarnrc
 
-rm -rf $HOME/.composer/composer.json
-ln -s $HOME/.dotfiles/composer.json $HOME/.composer/composer.json
+# rm -rf $HOME/.composer/composer.json
+# ln -s $HOME/.dotfiles/composer.json $HOME/.composer/composer.json
 
 rm -rf $HOME/package.json
 ln -s $HOME/.dotfiles/package.json $HOME/package.json
