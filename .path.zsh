@@ -1,19 +1,20 @@
 # Load dotfiles binaries
 # export PATH="$DOTFILES/bin:$PATH"
 
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
-export PATH="/usr/local/opt/php/bin:$PATH"
-export PATH="/usr/local/opt/php/sbin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php/bin:$PATH"
+export PATH="/opt/homebrew/opt/php/sbin:$PATH"
 
 # Load Composer tools
+export COMPOSER_HOME=$HOME/.composer
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Load Node global installed binaries
 export PATH="$HOME/.node/bin:$PATH"
-export PATH="/usr/local/opt/node@16/bin:$PATH"
+export PATH="/opt/hombrew/opt/node@20/bin:$PATH"
 
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"

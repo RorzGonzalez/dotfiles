@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=$PATH:/Users/Saucz/ffmpeg
+export PATH=$PATH:/Users/saucz/Developer/ffmpeg
 
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
@@ -77,6 +77,10 @@ ZSH_CUSTOM=$DOTFILES
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
+# HISTFILE=$HOME/Developer
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -107,3 +111,5 @@ source $ZSH/oh-my-zsh.sh
 
 source $DOTFILES/.aliases.zsh
 source $DOTFILES/.path.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
