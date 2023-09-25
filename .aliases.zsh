@@ -7,9 +7,18 @@ alias sql="mysql -uroot -pdbroot"
 
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/saucz.pub"
-alias reloadshell="source $HOME/.zshrc"
+alias reloadshell="source $HOME/.dotfiles/.zshrc"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
+
+# php
+alias php72="/opt/homebrew/opt/php@7.2/bin/php"
+alias php73="/opt/homebrew/opt/php@7.3/bin/php"
+alias php74="/opt/homebrew/opt/php@7.4/bin/php"
+alias php80="/opt/homebrew/opt/php@8.0/bin/php"
+alias php81="/opt/homebrew/opt/php@8.1/bin/php"
+alias php82="/opt/homebrew/opt/php@8.2/bin/php"
+# alias php="/opt/homebrew/opt/php/bin/php"
 
 # Homebrew
 alias services="brew services"
@@ -62,6 +71,7 @@ alias co="git checkout"
 alias cob="git checkout -b "
 alias gs="git status"
 alias gp="git push"
+alias gf="git fetch"
 alias gl="git log"
 alias glo="git log --oneline"
 alias glog="git log --oneline --graph"
@@ -69,7 +79,7 @@ alias nah="git reset --hard;git clean -df;"
 # Git
 alias amend="git add . && git commit --amend --no-edit"
 alias commit="git add . && git commit -m"
-alias diff="git diff"
+alias gd="git diff"
 alias force="git push --force"
 alias nuke="git clean -df && git reset --hard"
 alias pop="git stash pop"
@@ -81,3 +91,52 @@ alias unstage="git restore --staged ."
 alias wip="commit wip"
 
 alias pserve='open http://localhost:8000 && python -m SimpleHTTPServer'
+
+alias nginxrestart="nginx -s stop && nginx"
+alias redis='redis-server'
+
+#Functions
+
+# Make switching php versions easy
+function phpv() {
+    brew unlink php
+    brew link --overwrite --force "php@$1"
+    php -v
+}
+
+# nginxcreate webby.test webby
+function newsite() {
+    mkdir $HOME/Dropbox/Web/Sites/$2
+    mkdir $HOME/Dropbox/Web/Sites/$2/log
+    wget https://gist.githubusercontent.com/RorzGonzalez/6a772a77210f5706c960e7059146d960/raw/09fd1b36f9468b5d0cf8b25cab3c6a685b48c4ee/nginx-server-template-m1.conf -O $HOME/Dropbox/Web/Sites/$2/$1.conf
+    sed -i '' "s:{{host}}:$1:" $HOME/Dropbox/Web/Sites/$2/$1.conf
+
+    if [ "$2" ]; then
+        sed  -i '' "s:{{dir}}:$2:" $HOME/Dropbox/Web/Sites/$2/$1.conf
+    else
+        sed  -i '' "s:{{dir}}:$HOME/Sites/$1:" $HOME/Dropbox/Web/Sites/$2/$1.conf
+    fi
+
+    addssl $1
+
+    nginxrestart
+
+    codium $HOME/Dropbox/Web/Sites/$2/$1.conf
+ }
+
+ function addssl() {
+     openssl req \
+        -x509 -sha256 -nodes -newkey rsa:2048 -days 3650 \
+        -subj "/CN=$1" \
+        -reqexts SAN \
+        -extensions SAN \
+        -config <(cat /System/Library/OpenSSL/openssl.cnf; printf "[SAN]\nsubjectAltName=DNS:$1") \
+        -keyout /Users/Saucz/Dropbox/Web/Certs/$1.key \
+        -out /Users/Saucz/Dropbox/Web/Certs/$1.crt
+
+    sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /Users/Saucz/Dropbox/Web/Certs/$1.crt
+ }
+
+#  function nginxedit() {
+#      codium /Users/Saucz/Dropbox/Web/Sites/$1
+#  }
