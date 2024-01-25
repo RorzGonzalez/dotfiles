@@ -1,8 +1,8 @@
 {
     "require": {
         "friendsofphp/php-cs-fixer": "^3.2",
-        "laravel/installer": "^4.2",
-        "jeffreyvanrossum/tailpress-installer": "^0.2.1"
+        "jeffreyvanrossum/tailpress-installer": "^0.2.1",
+        "laravel/installer": "^5.1"
     },
     "autoload": {
         "psr-4": {

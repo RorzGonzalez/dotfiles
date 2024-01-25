@@ -6,7 +6,7 @@ alias sites="cd $HOME/Dropbox/Web/Sites"
 alias sql="mysql -uroot -pdbroot"
 
 # Shortcuts
-alias copyssh="pbcopy < $HOME/.ssh/saucz.pub"
+alias copyssh="pbcopy < $HOME/.ssh/finna.pub"
 alias reloadshell="source $HOME/.dotfiles/.zshrc"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
@@ -53,7 +53,7 @@ alias seed="php artisan db:seed"
 alias serve="php artisan serve"
 
 # Testing Stuff
-alias test="php artisan test"
+# alias test="php artisan test"
 alias tf="php artisan test --filter"
 alias pest="php artisan pest:test"
 alias newtest="php artisan make:test"
@@ -104,10 +104,34 @@ function phpv() {
     php -v
 }
 
+# Start local web services
+function startls() {
+    nginx
+    brew services start php@8.2
+    brew services start mariadb
+}
+
+# Stop local web services
+function stopls() {
+    nginx -s stop
+    brew services stop php@8.2
+    brew services stop mariadb
+}
+
 # nginxcreate webby.test webby
 function newsite() {
     mkdir $HOME/Dropbox/Web/Sites/$2
     mkdir $HOME/Dropbox/Web/Sites/$2/log
+    mkdir $HOME/Dropbox/Web/Sites/$2/.vscode
+    wget https://gist.github.com/RorzGonzalez/7feaf245c90672981776bd68587fd9a7/raw/template.code-workspace -O $HOME/Dropbox/Web/Sites/$2/.vscode/$2.code-workspace
+    sed -i '' "s:{{host}}:$1:" $HOME/Dropbox/Web/Sites/$2/.vscode/$2.code-workspace
+
+    # if [ "$2" ]; then
+    #     sed  -i '' "s:{{dir}}:$2:" $HOME/Dropbox/Web/Sites/$2/$2.code-workspace
+    # else
+    #     sed  -i '' "s:{{dir}}:$HOME/Sites/$1:" $HOME/Dropbox/Web/Sites/$2/$2.code-workspace
+    # fi
+
     wget https://gist.githubusercontent.com/RorzGonzalez/6a772a77210f5706c960e7059146d960/raw/09fd1b36f9468b5d0cf8b25cab3c6a685b48c4ee/nginx-server-template-m1.conf -O $HOME/Dropbox/Web/Sites/$2/$1.conf
     sed -i '' "s:{{host}}:$1:" $HOME/Dropbox/Web/Sites/$2/$1.conf
 

@@ -5,6 +5,9 @@ export PATH=$PATH:/Users/Saucz/ffmpeg
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+# PHP 8.2
+export PATH="/usr/local/opt/php@8.2/bin:$PATH"
+export PATH="/usr/local/opt/php@8.2/sbin:$PATH"
 export PATH="/usr/local/opt/php/bin:$PATH"
 export PATH="/usr/local/opt/php/sbin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"

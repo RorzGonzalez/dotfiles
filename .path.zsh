@@ -4,8 +4,10 @@
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php/bin:$PATH"
-export PATH="/opt/homebrew/opt/php/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
+# export PATH="/opt/homebrew/opt/php/bin:$PATH"
+# export PATH="/opt/homebrew/opt/php/sbin:$PATH"
 
 # Load Composer tools
 export COMPOSER_HOME=$HOME/.composer
