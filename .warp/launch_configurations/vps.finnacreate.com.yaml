@@ -27,6 +27,6 @@ windows:
     - tabs:
           - title: vps.finnacreate.com
             layout:
-                - cwd:
-                      commands:
-                          - exec: ssh -p 5384 finna@vps.finnacreate.com
+                cwd: /
+                commands:
+                    - exec: ssh -p 5384 finna@vps.finnacreate.com
