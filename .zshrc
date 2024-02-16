@@ -10,6 +10,8 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH=$PATH:/opt/homebrew/bin
+
 export PATH=$PATH:/Users/saucz/Developer/ffmpeg
 
 # Path to your dotfiles.
@@ -17,6 +19,10 @@ export DOTFILES=$HOME/.dotfiles
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Path to Anaconda's python version (TEMPORARY for helping Levi)
+# export PATH=~/anaconda3/bin:$PATH
+# export PATH="/anaconda3/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -139,3 +145,24 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Set bitwarden cli session key
+# export BW_SESSION="KO7Z5gW4WJKyDYcP+NynRdVRdAly2to9HmIqg6vs/Rkrqg4fmiwVgrXl/KZWsvMdFk4jmFam2KB80bcjnw+PEA=="
+
+# Add ZSH shell completion for bitwarden
+# eval "$(bw completion --shell zsh); compdef _bw bw;"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/saucz/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/saucz/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/saucz/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/saucz/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

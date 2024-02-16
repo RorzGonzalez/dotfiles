@@ -22,11 +22,11 @@
 #            - exec: code .
 
 ---
-name: Tru Trade Hub
+name: vps.trutrade.co.uk
 windows:
     - tabs:
-          - title: Tru Trade
+          - title: vps.trutrade.co.uk
             layout:
                 cwd: /
                 commands:
-                    - exec: ssh -p 1968 trutrade@vps.trutrade.co.uk
+                    - exec: ssh -p 1968 finna@vps.trutrade.co.uk
